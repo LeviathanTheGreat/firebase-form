@@ -1,0 +1,14 @@
+describe("tests value response",function(){
+    const firebase = require("firebase")
+    const config = {
+    
+    };
+    const firebase = firebase.initializeApp()
+    
+    beforeEach("", function(){
+        firebase.database().ref("dogs").push("") 
+    })
+        
+    it("",function(){
+    })
+})
