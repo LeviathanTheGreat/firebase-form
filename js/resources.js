@@ -1,5 +1,4 @@
 const resources = {
-  
   elemsToSubmit : document.getElementsByClassName(".toSubmit"),
   sendableNode: function(node){
     switch(node.tagName){
