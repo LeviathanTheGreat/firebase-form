@@ -1,3 +1,7 @@
+describe("testing the lib. functions",function(){
+    
+});
+
 describe("tests value response",function(){
     const firebase = require("firebase")
     const config = {
