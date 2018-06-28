@@ -3,10 +3,10 @@ describe("tests value response",function(){
     const config = {
     
     };
-    const firebase = firebase.initializeApp()
+    const firebase = firebase.initializeApp(config)
     
     beforeEach("", function(){
-        firebase.database().ref("dogs").push("") 
+        firebase.database().ref("dogs").push({}) 
     })
         
     it("",function(){
