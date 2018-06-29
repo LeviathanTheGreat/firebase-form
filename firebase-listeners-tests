@@ -1,3 +1,12 @@
+require("unitjs")
+
+
+describe("dependancies loaded",function(){
+    it("",function(){
+            
+    })
+})
+
 describe("testing the lib. functions",function(){
     
 });
@@ -7,7 +16,13 @@ describe("tests value response",function(){
     const config = {
     
     };
+    
     const firebase = firebase.initializeApp(config)
+    
+    it("",function(){
+        firebase.app()
+    })
+    
     
     beforeEach("", function(){
         firebase.database().ref("dogs").push({}) 
