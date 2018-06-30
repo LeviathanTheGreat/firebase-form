@@ -3,7 +3,7 @@ import firebase from "../js/firebase-listeners.js"
 
 describe("dependancies loaded",function(){
     it("",function(){
-              
+        require("")       
     })
 })
 
@@ -11,28 +11,27 @@ describe("testing the lib. functions",function(){
     
 });
 
-describe("tests value response",function(){
+describe("tests value response", function(){
     
     describe("code that will be used in the before() in this describe()",function(){
         firebase.
     })
     
-    
-    
-    
     beforeEach(function(){
         firebase.database().ref("dogs").push({
-            name:"sam"
+            name:"sam",
+            hair color:, 
+            
         }) 
     })
     
     afterEach(function(){
-        firebase.database().ref("/dogs").parent()
+        firebase.database().ref("/dogs").parent()/* ->   */
     })
         
     it("event fired",function(){
         firebase.on("child_added", function(snapshot){
-            assert(true)
+            assert(true);
         })
     })
     
