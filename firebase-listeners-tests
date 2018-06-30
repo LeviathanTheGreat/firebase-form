@@ -1,5 +1,5 @@
-const unit = require("unitjs")
-const firebase = 
+import unit from "./node_modules/unitjs.js"
+import firebase from "../js/firebase-listeners.js"
 
 describe("dependancies loaded",function(){
     it("",function(){
