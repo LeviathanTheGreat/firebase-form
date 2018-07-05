@@ -3,10 +3,14 @@ class CardGallery extends React.Component{
     
     }
     
-    addCard(cardIndex){
-        
+    static addCard(snapshot){
+        snapshot.val()
     }
     render(){
-    
+        return (
+        <div>
+        
+        </div>
+        )
     }
 }
