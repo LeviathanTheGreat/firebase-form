@@ -16,3 +16,23 @@ const resources = {
     }
   }
 };
+
+
+
+function changeButtonColor(btn){
+    tinyColor ? console.log() : throw new Error("tinycolor dependantcy not loaded");    
+    function randRGBValue(){
+        return Math.floor(Math.random() * 255)
+    }
+    let randRGB = {
+        r:randRGBValue(),
+        g:randRGBValue(),
+        b:randRGBValue()
+    }
+    
+    let tinyColorObject = tinyColor(randRGB);
+    let color = tinyColorObject.name();
+    
+
+    firebase.database().ref().child("button color").set(color);
+}

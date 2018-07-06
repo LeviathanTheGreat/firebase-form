@@ -11,7 +11,7 @@ describe("testing the lib. functions",function(){
     
 });
 
-describe("tests value response", function(){
+describe("tests value response of child_added listener", function(){
     
     describe("code that will be used in the before() in this describe()",function(){
         firebase.

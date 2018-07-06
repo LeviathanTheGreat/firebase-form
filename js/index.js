@@ -19,6 +19,10 @@ const resources = {
     }
   }
 };
+
+
+
+
 //need to make a way to conditioanlly send just on textbox or all
 
 function setDefKeyCommands(e) {
