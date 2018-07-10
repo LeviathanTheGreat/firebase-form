@@ -1,11 +1,13 @@
 const mocha = require("mocha");
 const { assert, expect } = require("chai"); 
+const 
 
 mocha.setup("tdd")
 
 
 describe("tests the button color generation function",function(){ 
 	before(()=>{
+		
 		function changeButtonColor(btn){
 		    tinyColor ? console.log() : throw new Error("tinycolor dependantcy not loaded");    
 		    function randRGBValue(){
@@ -22,7 +24,7 @@ describe("tests the button color generation function",function(){
 
 		    //omiting fron test
 		    //firebase.database().ref().child("button color").set(color);
-			return color
+		    return color
 		}
 	})
 
