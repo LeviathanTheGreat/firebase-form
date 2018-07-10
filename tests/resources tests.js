@@ -1,6 +1,6 @@
 const mocha = require("mocha");
 const { assert, expect } = require("chai"); 
-const 
+const tinyColor = require("tinycolor2") 
 
 mocha.setup("tdd")
 
@@ -35,3 +35,4 @@ describe("tests the button color generation function",function(){
 	})
 })
 
+mocha.run()
