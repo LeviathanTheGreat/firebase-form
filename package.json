@@ -1,3 +1,4 @@
+//dependancies needed: "mocha", "chai", sinon, "firebase"
 {
   "name": "firebase-form",
   "version": "1.0.0",
