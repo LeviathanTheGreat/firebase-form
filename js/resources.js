@@ -17,6 +17,19 @@ const resources = {
   }
 };
 
+function attachButtonChangeListener(nodesToUpdate){
+	firebase.database().ref("/").child("button color").on("value", (data)=>{
+	    const objectValue = data.val();
+	    if(typeof objectValue === "string"){
+	    	nodesToUpdate["button"].style.backgroundColor = objectValue; 
+	    }
+	}, (errorObject) => {
+		console.error("there was a problem ");
+	    throw errorObject;
+	})
+}
+
+
 
 
 function changeButtonColor(btn){

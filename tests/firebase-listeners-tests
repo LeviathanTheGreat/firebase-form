@@ -1,0 +1,41 @@
+import unit from "./node_modules/unitjs.js"
+import firebase from "../js/firebase-listeners.js"
+
+describe("dependancies loaded",function(){
+    it("",function(){
+        require("")       
+    })
+})
+
+describe("testing the lib. functions",function(){
+    
+});
+
+describe("tests value response of child_added listener", function(){
+    
+    describe("code that will be used in the before() in this describe()",function(){
+        firebase.
+    })
+    
+    beforeEach(function(){
+        firebase.database().ref("dogs").push({
+            name:"sam",
+            hair color:, 
+            
+        }) 
+    })
+    
+    afterEach(function(){
+        firebase.database().ref("/dogs").parent()/* ->   */
+    })
+        
+    it("event fired",function(){
+        firebase.on("child_added", function(snapshot){
+            assert(true);
+        })
+    })
+    
+    afterEach("take away the firebase event listner",function(){
+        firebase.database().ref("dogs").off("child_added")
+    })
+})
