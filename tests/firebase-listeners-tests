@@ -1,10 +1,22 @@
-import unit from "./node_modules/unitjs.js"
-import firebase from "../js/firebase-listeners.js"
+const mocha = require("mocha");
+const {assert, expect, should} = require("chai"); 
+
+mocha.setup("tdd")
 
 describe("dependancies loaded",function(){
-    it("",function(){
-        require("")       
+    beforeEach(function(){
+        const nodeAssert = require("assert")
     })
+    it("tests global presence of chai assert",function(){
+        nodeAssert(expect)       
+    })
+    it("tests global presence of chai assert",function(){
+        nodeAssert(assert)
+    })
+    it("tests global presence of chai should",function(){
+        nodeAssert(should)
+    })
+
 })
 
 describe("testing the lib. functions",function(){
@@ -39,3 +51,6 @@ describe("tests value response of child_added listener", function(){
         firebase.database().ref("dogs").off("child_added")
     })
 })
+
+
+mocha.run()
