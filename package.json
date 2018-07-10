@@ -1,0 +1,25 @@
+{
+  "name": "firebase-form",
+  "version": "1.0.0",
+  "description": "a form that utilizes firebase for real time updating",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"/js/resources tests.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeviathanTheGreat/firebase-form.git"
+  },
+  "keywords": [
+    "firebase",
+    "form",
+    "reactive",
+    "database"
+  ],
+  "author": "Chris Cormier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeviathanTheGreat/firebase-form/issues"
+  },
+  "homepage": "https://github.com/LeviathanTheGreat/firebase-form#readme"
+}
