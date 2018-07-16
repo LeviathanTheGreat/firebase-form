@@ -1,0 +1,7 @@
+
+
+file loading order 
+
+tinyColor2, -> main.js -> react -> firebase-app, firebase-database, firebase event listeners 
+
+
