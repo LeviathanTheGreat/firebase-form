@@ -47,7 +47,7 @@ describe("tests value response of child_added listener", function(){
     
     
         
-    it("event fired (this is a weird way of asserting but it might just work)",function(){
+    it("event fired",function(){
         var eventCounter = sinon.spy();
         
         firebase.on("child_added", function(snapshot){
