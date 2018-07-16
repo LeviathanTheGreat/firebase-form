@@ -4,9 +4,19 @@ class CardGallery extends React.Component{
         this.state = { numOfChildren:0 };    
     }
     
+    
+    props = { 
+        cards:{
+        /*
+            name:,
+            sex:,
+        */    
+        }
+    };
     static addCard(snapshot){
         snapshot.val()
     }
+    
     
     
     
