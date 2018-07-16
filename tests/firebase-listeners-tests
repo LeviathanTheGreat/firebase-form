@@ -1,11 +1,13 @@
 const mocha = require("mocha");
 const {assert, expect, should} = require("chai"); 
+const nodeAssert = require("assert")
+const sinon = require("sinon");
 
 mocha.setup("tdd")
 
 describe("dependancies loaded",function(){
     beforeEach(function(){
-        const nodeAssert = require("assert")
+        
     })
     it("tests global presence of chai assert",function(){
         nodeAssert(expect)       
@@ -25,36 +27,36 @@ describe("testing the lib. functions",function(){
 
 describe("tests value response of child_added listener", function(){
     
-    describe("code that will be used in the before() in this describe()",function(){
-        before(function(){
-            firebase.
-        })
-        
-        it()
-    
-    })
-    
     beforeEach(function(){
-        firebase.database().ref("dogs").push({
+        firebase.database().ref("/testDogs").push({
             name:"sam",
-            hair color:, 
+            sex:"is maleish",
+            hair-color:"brownish",
+            description:"is doggish",
             
         }) 
     })
     
     afterEach(function(){
-        firebase.database().ref("/dogs").parent()/* ->   */
-    })
-        
-    it("event fired",function(){
-        firebase.on("child_added", function(snapshot){
-            assert(true);
-        })
+        firebase.database().ref("/testDogs").parent()/* ->   */
     })
     
     afterEach("take away the firebase event listner",function(){
-        firebase.database().ref("dogs").off("child_added")
+        firebase.database().ref("/testDogs").off("child_added")
     })
+    
+    
+        
+    it("event fired (this is a weird way of asserting but it might just work)",function(){
+        var eventCounter = sinon.spy();
+        
+        firebase.on("child_added", function(snapshot){
+            
+        })
+        
+    })
+    
+    
 })
 
 
