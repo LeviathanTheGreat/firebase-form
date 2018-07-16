@@ -1,3 +1,8 @@
+import React,{component} from "/deps/React" 
+import 
+
+import default as "firebaseSetup" from "./firebaseListeners" 
+
 class CardGallery extends React.Component{
     constructor(props){
         
@@ -11,35 +16,41 @@ class CardGallery extends React.Component{
             ]
         };
         
-        this.state = { numOfChildren:0 };    
+        this.state = { numOfCards:0, cards:this.props.cards };    
     }
 
-    static addCard(snapshot){
-        snapshot.val()
-        numOfChildren++
-    }
-    
-    static removeCardWrapper(){
-    
+    static addCard(dogAttributes){
+        //pushes an object with all dog
+        firebase.database().ref("/dogs").push(dogAttributes)
+        numOfCards++
     }
     
     static removeCard(arrayIndex,owner){
-        firebase.database().ref("/dogs")
+        firebase.database().ref("/dogs").find().remove()
+        //updates in 
+        .then(()=>{
+            numOfCards++
+            this.setState((priorState, ) => prior)    
+        }) //(?)
         
     }
     
     
     
+    
+    
+    
     render(){
-        let cards = 
+        cards.forEach
+        
         return (
             <div class="gallery" >
                 <div class="outer_frame">
-                    <div></div>
+                    <gallery-card  />
                 </div>
             </div>
-            <div class="showmore">
-                    
+            <div class="ui button secondary show_more">
+                        
             </div>
         )
     }
