@@ -2,7 +2,17 @@ const mocha = require("mocha");
 const {assert, expect, should} = require("chai"); 
 const nodeAssert = require("assert")
 const sinon = require("sinon");
+const firebase = require("firebase");
 const fakeData = JSON.parse(require("test-dependancies/firebase-fake_data.js"));
+
+//database initialization
+let config = {
+    
+};
+
+firebase.initializeApp(config)
+
+
 
 mocha.setup("tdd")
 
