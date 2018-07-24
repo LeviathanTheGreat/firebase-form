@@ -1,8 +1,8 @@
 
 
-file loading order 
+order of file loading 
 
-tinyColor2, -> main.js -> react -> firebase-app, firebase-database, firebase event listeners 
+tinyColor2, -> main.js -> react -> componentWillMount: firebase-app, firebase-database, firebase event listeners ->  
 
 
 worries
@@ -11,5 +11,3 @@ worries
 -react method setState
 -imports
 -adding v-for mechanism for react rendering
-
-
