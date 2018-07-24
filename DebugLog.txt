@@ -1,0 +1,2 @@
+*fixed*debug #1:npm and node out of date 
+debug #2: add .git file to the remote repo
