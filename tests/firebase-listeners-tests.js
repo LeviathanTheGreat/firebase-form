@@ -22,11 +22,6 @@ describe("dependancies loaded",function(){
         assert.ok(fakeData)       
     })
 
-    it("example data is an object",function(){
-        assert(typeof fakeData === "object")
-    })
-
-
     it("tests global presence of chai assert",function(){
         nodeAssert(expect)       
     })
@@ -39,7 +34,7 @@ describe("dependancies loaded",function(){
 
 })
 
-describe("testing the lib. functions",function(){
+describe("testing the lib functions",function(){
     
 });
 
