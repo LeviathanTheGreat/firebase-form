@@ -1,11 +1,11 @@
 import React,{component} from "/deps/React" 
 import 
 
-import default as "firebaseSetup" from "./firebaseListeners" 
+import default as "firebaseSetup" from "./firebaseListeners"   
 
 class CardGallery extends React.Component{
-    constructor(props){
-        
+    constructor(){
+        super(props)
         this.props = { 
             cards:[
             /*
@@ -14,9 +14,13 @@ class CardGallery extends React.Component{
                 createdBy:, 
             */    
             ]
+            this.state = {
+                numOfCards:0, 
+                cards:this.props.cards, 
+            };
         };
         
-        this.state = { numOfCards:0, cards:this.props.cards };    
+            
     }
 
     static addCard(dogAttributes){
@@ -29,23 +33,30 @@ class CardGallery extends React.Component{
         firebase.database().ref("/dogs").find().remove()
         //updates in 
         .then(()=>{
-            numOfCards++
-            this.setState((priorState, ) => prior)    
+            numOfCards--;
+            this.setState(/*???*/)    
         }) //(?)
         
     }
     
     
-    
-    
-    
-    
+
+    Style = " display:block; 
+              width:auto;
+              height:auto;
+              
+              
+              background-color:white;
+              border-radius:25px;  
+
+
+                                    ";  
     render(){
         cards.forEach
         
         return (
             <div class="gallery" >
-                <div class="outer_frame">
+                <div class="outer_frame" style="">
                     <gallery-card  />
                 </div>
             </div>
