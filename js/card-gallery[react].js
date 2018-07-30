@@ -4,7 +4,7 @@ import
 import default as "firebaseSetup" from "./firebaseListeners"   
 
 class CardGallery extends React.Component{
-    constructor(){
+    constructor(props){
         super(props)
         this.props = { 
             cards:[
@@ -19,14 +19,24 @@ class CardGallery extends React.Component{
                 cards:this.props.cards, 
             };
         };
-        
+        this.galleryStyle = " display:block; 
+                              width:auto;
+                              height:auto;
+
+
+                              background-color:white;
+                              border-radius:25px;  
+
+
+                                    "; 
             
     }
 
     static addCard(dogAttributes){
         //pushes an object with all dog
-        firebase.database().ref("/dogs").push(dogAttributes)
-        numOfCards++
+        firebase.database().ref("/dogs").push(dogAttributes).then(()=>{
+            this.setState(/*???*/)
+        })
     }
     
     static removeCard(arrayIndex,owner){
@@ -38,22 +48,9 @@ class CardGallery extends React.Component{
         }) //(?)
         
     }
-    
-    
-
-    Style = " display:block; 
-              width:auto;
-              height:auto;
-              
-              
-              background-color:white;
-              border-radius:25px;  
-
-
-                                    ";  
+     
     render(){
-        cards.forEach
-        
+        const cardsToRender = this.props.cards.forEach((cardInfo)=>(<gallery-card>))
         return (
             <div class="gallery" >
                 <div class="outer_frame" style="">
