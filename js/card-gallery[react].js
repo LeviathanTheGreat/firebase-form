@@ -1,5 +1,4 @@
-import React,{component} from "/deps/React" 
-import 
+import React,{component} from "/deps/React"
 
 import default as "firebaseSetup" from "./firebaseListeners"   
 
@@ -15,7 +14,6 @@ class CardGallery extends React.Component{
 
                               background-color:white;
                               border-radius:25px;  
-
                                                     `; 
             
     }
@@ -38,8 +36,8 @@ class CardGallery extends React.Component{
         })
     }
     
-    static removeCard(arrayIndex,owner){
-        firebase.database().ref("/dogs").find().remove()
+    static removeCard(arrayIndex, owner){
+        firebase.database().ref("/dogs").find(/*look up how to use this method*/).remove()
         //updates in 
         .then(()=>{
             this.setState(/*???*/)    
@@ -52,15 +50,11 @@ class CardGallery extends React.Component{
     render(){
         let cards = this.state.cards; 
         const cardsToRender = this.props.cards.forEach((cardInfo)=>(<gallery-card>))
-        
+       
         return (
             <div class="gallery" >
-                <div class="outer_frame">
-                    {                                
-                        cards.map((card)=>{    
-                            
-                        }) 
-                    }
+                <div class="outer_frame" style="">
+                    {cardElements}
                 </div>
             </div>
             <div class="ui button secondary show_more">
