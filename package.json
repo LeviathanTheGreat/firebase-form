@@ -4,7 +4,7 @@
   "description": "a form that utilizes firebase for real time updating",
   "main": "index.js",
   "scripts": {
-    "test": "tests/resources tests.js"
+    "test": "node tests/firebase-listeners-tests.js"
   },
   "repository": {
     "type": "git",
