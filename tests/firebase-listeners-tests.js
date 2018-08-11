@@ -47,7 +47,7 @@ describe("tests value response of child_added listener", function(){
     beforeEach(function(){
         for(let i = 0; i < fakeDoggoData.length; i++ ){
             firebase.database().ref("/testDogs").push({
-                fakeDoggoData[i]...
+                ...fakeDoggoData[i]
             })
         }
     })
