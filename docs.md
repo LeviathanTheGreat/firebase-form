@@ -12,6 +12,9 @@ tinyColor2, -> main.js -> react -> componentWillMount: firebase-app, firebase-da
 #worries
 -firebase(obvious) and the best ways to interact with the react gallery component
 -react method setState
--imports
--adding v-for mechanism for react rendering
+-imports => find the way in webpack to convert 
 -find out if I need proxrequire to use firebase-mock
+
+
+#additionally...
+check out react's perf library, for testing preformance.
