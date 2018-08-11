@@ -24,6 +24,7 @@
   "homepage": "https://github.com/LeviathanTheGreat/firebase-form#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "firebase-mock": "^2.2.4",
     "mocha": "^5.2.0",
     "sinon": "^6.1.3",
     "unit.js": "^2.0.0",
