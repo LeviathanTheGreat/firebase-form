@@ -23,7 +23,7 @@ mocha.setup("tdd")
 describe("dependancies loaded",function(){
     
     it("test that the fakeData dep. is loaded for default doggos  ",function(){
-        assert.ok(fakedData)       
+        assert.ok(fakeDoggoData)       
     })
 
     it("tests global presence of chai assert",function(){
