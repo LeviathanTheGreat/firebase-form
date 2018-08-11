@@ -3,6 +3,7 @@ const {assert, expect, should} = require("chai");
 const nodeAssert = require("assert")
 const sinon = require("sinon");
 const firebase = require("firebase");
+const fireMock = require("firebase-mock");
 const fakeDoggoData = JSON.parse(require("test-dependancies/firebase-fake_data.js"));
 
 //database initialization
