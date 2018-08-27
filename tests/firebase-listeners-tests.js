@@ -1,10 +1,11 @@
 const mocha = require("mocha");
+const path = require("path")
 const {assert, expect, should} = require("chai"); 
 const nodeAssert = require("assert")
 const sinon = require("sinon");
 const firebase = require("firebase");
 const fireMock = require("firebase-mock");
-const fakeDoggoData = JSON.parse(require("test-dependancies/firebase-fake_data.js"));
+const fakeDoggoData = require( path.resolve( __dirname, "./firebase-fake_data.js" ) );
 
 //database initialization
 let config = {

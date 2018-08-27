@@ -7,7 +7,6 @@ mocha.setup("tdd")
 
 describe("tests the button color generation function",function(){ 
 	before(()=>{
-		
 		function changeButtonColor(btn){
 		    tinyColor ? console.log() : throw new Error("tinycolor dependantcy not loaded");    
 		    function randRGBValue(){
@@ -22,7 +21,7 @@ describe("tests the button color generation function",function(){
 		    let tinyColorObject = tinyColor(randRGB);
 		    let color = tinyColorObject.name();
 
-		    //omiting fron test
+		    //omiting from test
 		    //firebase.database().ref().child("button color").set(color);
 		    return color
 		}
@@ -30,7 +29,7 @@ describe("tests the button color generation function",function(){
 
 	it("tests thata string, being the name of color, is returned", function(){
 		let color = changeButtonColor(); 
-		expect(color).be.a("string")
+		expect(color).to.be.a("string");
 		console.log("the name of the button's color is " + color)
 	})
 })
