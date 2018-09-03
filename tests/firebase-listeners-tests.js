@@ -4,7 +4,7 @@ const {assert, expect, should} = require("chai");
 const nodeAssert = require("assert")
 const sinon = require("sinon");
 const firebase = require("firebase");
-const fireMock = require("firebase-mock");
+const firebaseMock = require("firebase-mock");
 const fakeDoggoData = require( path.resolve( __dirname, "./firebase-fake_data.js" ) );
 
 //database initialization
@@ -17,9 +17,9 @@ let config = {
     messagingSenderId: "862753541155"
 };
 
-firebase.initializeApp(config)
+firemock.initializeApp(config)
 
-mocha.setup("tdd")
+firebaseMock.override();
 
 describe("dependancies loaded",function(){
     
@@ -27,6 +27,11 @@ describe("dependancies loaded",function(){
         assert.ok(fakeDoggoData)       
     })
 
+    it("firemock is present",()=>{
+        console.log("firemock messages: " + Object.keys(firemock))
+        assert(firemock)
+    })
+        
     it("tests global presence of chai assert",function(){
         nodeAssert(expect)       
     })
@@ -47,37 +52,41 @@ describe("tests value response of child_added listener", function(){
     
     beforeEach(function(){
         for(let i = 0; i < fakeDoggoData.length; i++ ){
-            firebase.database().ref("/testDogs").push({
+            firemock.database().ref("/testDogs").push({
                 ...fakeDoggoData[i]
             })
         }
+        firemock.database().flush()
     })
     
 
         
     it("the event fired, the mocha before works sorta as like extending the scope,and the value was picked up",function(){
         
-        //let mock = 
+        const fake = sinon.fake();
         
-        
-        firebase.on("child_added", function(snapshot){
-            let Fval = snapshot.val();
-            assert.ok(Fval)
-            //assert.calledWith()
+        firemock.database().ref("/testDogs").on("child_added", function(snapshot){
+            FVal = snapshot.val();
+            fake(FVal)
         })
             
-
+        
+        for(let key in fakeDoggoData){
+            if(fakeDoggoData[key] !== fake.lastArg){
+                assert(fakeDoggoData[key] === fake.lastArg)
+            }
+        }
     })
     
     it("tests that the firebase push funtionality is working",function(){
         
-        let doggoAdded;
+        var doggoAdded;
         
-        firebase.on("child_added", function(snapshot){
-            let doggoAdded = snapshot.val();
+        firemock.on("child_added", function(snapshot){
+            doggoAdded = snapshot.val();
         })
         
-         firebase.database().ref("/testDogs").push({
+         firemock.database().ref("/testDogs").push({
                 name:"Sam",
                 sex:"is maleish",
                 hairColor:"brownish",
@@ -89,14 +98,11 @@ describe("tests value response of child_added listener", function(){
     });
     
     afterEach(function(){
-        firebase.database().ref("/testDogs").removeValue()
+        firemock.database().ref("/testDogs").removeValue()
     })
     
     afterEach(function(){
-        firebase.database().ref("/testDogs").off("child_added")
+        firemock.database().ref("/testDogs").off("child_added")
     })
     
 })
-
-
-mocha.run()

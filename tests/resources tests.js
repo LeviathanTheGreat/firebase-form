@@ -22,7 +22,7 @@ describe("tests the button color generation function",function(){
 		    let color = tinyColorObject.name();
 
 		    //omiting from test
-		    //firebase.database().ref().child("button color").set(color);
+		    //firemock.database().ref().child("button color").set(color);
 		    return color
 		}
 	})
