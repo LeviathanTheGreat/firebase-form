@@ -1,2 +1,2 @@
 # firebase-form
-a form using semantic UI and express for the backend, until it has been proven to work and then will be switched over to firebase. 
+a firebase project using firebase for the backend and semantic UI and Vue for the frontend.
