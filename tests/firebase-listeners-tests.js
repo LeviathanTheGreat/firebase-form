@@ -88,7 +88,7 @@ describe("tests value response of child_added listener", function(){
         
          firemock.database().ref("/testDogs").push({
                 name:"Sam",
-                sex:"is maleish",
+                sex:"maleish",
                 hairColor:"brownish",
                 description:"is doggish",
          })
